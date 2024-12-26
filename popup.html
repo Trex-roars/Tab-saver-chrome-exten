@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Saver Extension</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Tab Saver</h1>
+            <button id="saveTabs" class="btn-primary">
+                Save Tabs
+              </button>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <ul id="savedTabsList" class="saved-tabs-list"></ul>
+        </div>
+
+        <!-- Tab Details -->
+        <div id="tabDetails" class="tab-details">
+            <h2 id="savedAt"></h2>
+            <ul id="tabList" class="tab-list"></ul>
+            <button id="restoreAll" style="display: none; width:100%;" class="btn-secondary">
+                <i class="fas fa-sync-alt"></i>
+                Restore All Tabs</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 Tab Saver Extension</p>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
