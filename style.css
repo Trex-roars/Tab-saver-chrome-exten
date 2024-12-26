@@ -310,7 +310,7 @@ html {
     overflow: hidden;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     body {
         width: 100%;
     }
@@ -332,7 +332,7 @@ html {
         padding: 12px 20px;
         font-size: 15px;
     }
-}
+} */
 
 .toast {
     position: fixed;
