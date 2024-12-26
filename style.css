@@ -4,7 +4,7 @@
     box-sizing: border-box;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow: hidden;
-    scrollbar-width:none;
+    scrollbar-width: none;
 }
 
 body {
@@ -18,12 +18,31 @@ body {
 
 }
 
+#saveTabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+#saveTabs i {
+    font-size: 18px;
+    margin-left: 14px;
+}
+
+
+.tab-list li i {
+    margin-right: 8px;
+}
+
 .popup-container {
     width: 380px;
     min-height: 300px;
     background: #18181b;
     overflow: hidden;
-    scrollbar-width:none;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -85,7 +104,23 @@ body {
     box-shadow: none;
 }
 
+.savedTabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.savedTabs i {
+    margin-right: 12px;
+}
+
 .content {
+    display: flex;
+    flex-direction: column;
+
     padding: 20px;
     flex: 1;
     background: #18181b;
@@ -217,7 +252,6 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    /* margin-top: 20px; */
 }
 
 .btn-secondary:hover {
@@ -260,6 +294,10 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
+}
+
+.footer .btn-secondary {
+    margin: 20px
 }
 
 .footer p {
