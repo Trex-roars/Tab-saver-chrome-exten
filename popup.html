@@ -23,22 +23,29 @@
             <div class="savedTabs" >
                 <i class="fas fa-list"></i>
                 <h2>Saved Tabs</h2></div>
-            <ul id="savedTabsList" class="saved-tabs-list"></ul>
+            <ul id="savedTabsList" class="saved-tabs-list">
+
+            </ul>
         </div>
 
         <!-- Tab Details -->
         <div id="tabDetails" class="tab-details" style="display: none;">
-            <h2 id="savedAt" ><i class="fas fa-clock"></i> Saved At:</h2>
+            <h2 id="savedAt" >
+                <i class="fas fa-clock"></i>
+                 Saved At:
+                </h2>
             <ul id="tabList" class="tab-list"></ul>
             <button id="restoreAll" style="display: none; width: 100%;" class="btn-secondary">
-                <i class="fas fa-sync-alt"></i> Restore All Tabs
+                <i class="fas fa-sync-alt"></i>
+                Restore All Tabs
             </button>
         </div>
 
         <!-- Footer -->
         <div class="footer">
             <button id="exportData" class="btn-secondary">
-                <i class="fas fa-file-export"></i> Export Data
+                <i class="fas fa-file-export"></i>
+                Export Data
             </button>
 
             <input id="importFile" type="file" accept="application/json" style="display: none;" />
