@@ -262,6 +262,10 @@ body {
     border-bottom-right-radius: 16px;
 }
 
+.footer .btn-secondary {
+    margin: 20px
+}
+
 .footer p {
     color: #6b7280;
     font-size: 12px;

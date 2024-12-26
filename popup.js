@@ -4,6 +4,10 @@ const tabDetails = document.getElementById('tabDetails');
 const savedAtElement = document.getElementById('savedAt');
 const tabList = document.getElementById('tabList');
 const restoreAllBtn = document.getElementById('restoreAll');
+const importDataBtn = document.getElementById('importData');
+const importFileInput = document.getElementById('importFile');
+const exportDataBtn = document.getElementById('exportData');
+
 const TOAST_TIMEOUT = 2000;
 
 // Initialize saved tabs from localStorage
@@ -161,3 +165,69 @@ document.addEventListener('click', (event) => {
     restoreAllBtn.style.display = 'none';  // Hide Restore All button
   }
 });
+
+
+// Export saved tabs as JSON file
+exportDataBtn.addEventListener('click', () => {
+  try {
+    const savedTabs = getSavedTabs();
+    if (!savedTabs.length) {
+      showToast('No data to export.', 'warning');
+      return;
+    }
+
+    const blob = new Blob([JSON.stringify(savedTabs, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `saved-tabs-${Date.now()}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+
+    showToast('Data exported successfully!', 'success');
+  } catch (error) {
+    showToast('Error exporting data.', 'error');
+    console.error('Error exporting data:', error);
+  }
+});
+
+
+// Open file input dialog on import button click
+importDataBtn.addEventListener('click', () => importFileInput.click());
+importFileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try {
+        const importedData = JSON.parse(e.target.result);
+
+        if (!Array.isArray(importedData)) {
+          throw new Error('Invalid file format.');
+        }
+
+        const existingData = getSavedTabs();
+        const mergedData = [...existingData, ...importedData];
+        setSavedTabs(mergedData);
+
+        // Re-render the saved tabs list
+        renderSavedTabsList(mergedData);
+
+        showToast('Data imported successfully!', 'success');
+      } catch (error) {
+        showToast('Error importing data. Please upload a valid file.', 'error');
+        console.error('Error importing data:', error);
+      }
+    };
+
+    reader.onerror = () => {
+      showToast('Error reading file.', 'error');
+      console.error('Error reading file.');
+    };
+
+    reader.readAsText(file);
+
+    // Reset the file input to allow re-importing the same file if needed
+    event.target.value = '';
+  });
