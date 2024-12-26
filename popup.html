@@ -6,7 +6,6 @@
     <title>Tab Saver Extension</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,31 +14,35 @@
         <div class="header">
             <h1>Tab Saver</h1>
             <button id="saveTabs" class="btn-primary">
-                Save Tabs
-              </button>
-
+                Save Tabs <i class="fas fa-save"></i>
+            </button>
         </div>
 
         <!-- Main Content -->
         <div class="content">
+            <div class="savedTabs"><i class="fas fa-list"></i> <h2>Saved Tabs</h2></div>
             <ul id="savedTabsList" class="saved-tabs-list"></ul>
         </div>
 
         <!-- Tab Details -->
         <div id="tabDetails" class="tab-details">
-            <h2 id="savedAt"></h2>
+            <h2 id="savedAt"><i class="fas fa-clock"></i> Saved At:</h2>
             <ul id="tabList" class="tab-list"></ul>
-            <button id="restoreAll" style="display: none; width:100%;" class="btn-secondary">
-                <i class="fas fa-sync-alt"></i>
-                Restore All Tabs</button>
+            <button id="restoreAll" style="display: none; width: 100%;" class="btn-secondary">
+                <i class="fas fa-sync-alt"></i> Restore All Tabs
+            </button>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <button id="exportData" class="btn-secondary">Export Data</button>
+            <button id="exportData" class="btn-secondary">
+                <i class="fas fa-file-export"></i> Export Data
+            </button>
 
             <input id="importFile" type="file" accept="application/json" style="display: none;" />
-<button id="importData" class="btn-secondary">Import Data</button>
+            <button id="importData" class="btn-secondary">
+                <i class="fas fa-file-import"></i> Import Data
+            </button>
 
             <p>&copy; 2024 Tab Saver Extension</p>
         </div>

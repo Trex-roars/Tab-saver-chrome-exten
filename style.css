@@ -17,6 +17,23 @@ body {
 
 
 }
+#saveTabs {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    font-size: 18px;
+    color: #ffffff;
+}
+#saveTabs i{
+    font-size: 18px;
+    margin-left: 14px;
+}
+
+
+.tab-list li i {
+    margin-right: 8px;
+}
 
 .popup-container {
     width: 380px;
@@ -85,7 +102,22 @@ body {
     box-shadow: none;
 }
 
+.savedTabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-bottom:10px ;
+
+}
+
+.savedTabs i {
+    margin-right: 12px;
+}
 .content {
+    display: flex;
+    flex-direction: column;
+
     padding: 20px;
     flex: 1;
     background: #18181b;
